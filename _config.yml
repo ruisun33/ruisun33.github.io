@@ -60,14 +60,7 @@ plugins:
 author:
   name   : "R S"
   avatar : "https://github.com/ruisun33.png"
-  bio    : ""
-  links:
-    - label: ""
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/ruisun33"
-    - label: ""
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/ruisun12/"
+  bio    : "Training my own weights from Epoch 1 Step 0"
 
 footer:
   links:
