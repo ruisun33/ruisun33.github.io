@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Thinky
+title: The Thinking Notes
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Training my own weights. 
+  Training my own weights. A student’s distillation of the AI landscape.
 twitter_username:
 github_username: ruisun33
 # Skin themes: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
@@ -62,19 +62,19 @@ author:
   avatar : "https://github.com/ruisun33.png"
   bio    : ""
   links:
-    - label: "GitHub"
+    - label: ""
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ruisun33"
-    - label: "LinkedIn"
+    - label: ""
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/ruisun12/"
 
 footer:
   links:
-    - label: "GitHub"
+    - label: ""
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ruisun33"
-    - label: "LinkedIn"
+    - label: ""
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/ruisun12/"
 
