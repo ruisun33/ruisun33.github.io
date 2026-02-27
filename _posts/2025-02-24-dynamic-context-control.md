@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Context Management"
 date: 2025-02-24
-categories: [projects]
+categories: [Projects]
 tags: [context-management, thompson-sampling, test-time-optimization]
 pin: false
 ---

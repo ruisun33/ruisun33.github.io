@@ -1,7 +1,7 @@
 ---
 title: "Trace-Bench"
 date: 2025-02-25
-categories: [projects]
+categories: [Projects]
 tags: [benchmark, reinforcement-learning, agentic-ai]
 pin: false
 ---
