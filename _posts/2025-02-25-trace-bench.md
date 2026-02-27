@@ -7,7 +7,6 @@ pin: false
 ---
 
 > A benchmark and RL training substrate for evaluating causal diagnostic reasoning in AI agents
-{: .prompt-info}
 
 ## TL;DR
 

@@ -7,7 +7,6 @@ pin: false
 ---
 
 > Adaptive context management for LLMs via Primal-Dual Thompson Sampling
-{: .prompt-info}
 
 ## TL;DR
 

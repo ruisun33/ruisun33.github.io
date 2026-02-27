@@ -7,7 +7,7 @@ A collection of projects I'm currently working on.
 
 ---
 
-{% assign projects = site.posts | where_exp: "post", "post.categories contains 'projects'" %}
+{% assign projects = site.posts | where_exp: "post", "post.categories contains 'Projects'" %}
 {% for post in projects %}
 ### [{{ post.title }}]({{ post.url }})
 {{ post.excerpt }}
