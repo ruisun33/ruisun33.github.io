@@ -1,6 +1,9 @@
 ---
 title: "Dynamic Context Management"
-excerpt: "Adaptive context management for LLMs via Primal-Dual Thompson Sampling"
+date: 2025-02-24
+categories: [projects]
+tags: [context-management, thompson-sampling, test-time-optimization]
+pin: false
 ---
 
 > Adaptive context management for LLMs via Primal-Dual Thompson Sampling

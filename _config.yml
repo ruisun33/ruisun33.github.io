@@ -19,7 +19,6 @@ title: The Thinking Notes
 tagline: ""
 
 description: >-
-  Projects and notes on causal reasoning, agentic AI, and decision systems.
 
 url: "https://ruisun33.github.io"
 
@@ -162,9 +161,6 @@ collections:
   tabs:
     output: true
     sort_by: order
-  projects:
-    output: true
-    permalink: /projects/:path/
 
 defaults:
   - scope:
@@ -187,12 +183,6 @@ defaults:
     values:
       layout: page
       permalink: /:title/
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: post
-      toc: true
 
 sass:
   style: compressed

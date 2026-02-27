@@ -1,7 +1,9 @@
 ---
 title: "Trace-Bench"
-tags: [benchmark]
-excerpt: "A benchmark for evaluating causal diagnostic reasoning in AI agents"
+date: 2025-02-25
+categories: [projects]
+tags: [benchmark, reinforcement-learning, agentic-ai]
+pin: false
 ---
 
 > A benchmark and RL training substrate for evaluating causal diagnostic reasoning in AI agents
