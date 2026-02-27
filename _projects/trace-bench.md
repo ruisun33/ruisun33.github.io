@@ -1,6 +1,7 @@
 ---
-title: "Ad-Agentic-Bench"
-excerpt: "A benchmark and RL training substrate for evaluating causal diagnostic reasoning in AI agents"
+title: "Trace-Bench"
+tags: [benchmark]
+excerpt: "A benchmark for evaluating causal diagnostic reasoning in AI agents"
 ---
 
 > A benchmark and RL training substrate for evaluating causal diagnostic reasoning in AI agents

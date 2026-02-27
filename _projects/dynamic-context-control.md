@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Context Window Management"
+title: "Dynamic Context Management"
 excerpt: "Adaptive context management for LLMs via Primal-Dual Thompson Sampling"
 ---
 

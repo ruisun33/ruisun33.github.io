@@ -1,7 +1,7 @@
 ---
 title: "The Geometry of Learnable Reward"
 date: 2025-02-25
-categories: [thoughts]
+categories: [Thoughts]
 tags: [reinforcement-learning, reward-hacking, RLVR]
 math: true
 ---

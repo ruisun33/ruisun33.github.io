@@ -1,5 +1,5 @@
 ---
-title: "Ad Auction Gym"
+title: "Ad Arena"
 excerpt: "A simulation environment and LLM benchmark for search advertising bidding strategies"
 ---
 
@@ -8,7 +8,7 @@ excerpt: "A simulation environment and LLM benchmark for search advertising bidd
 
 ## TL;DR
 
-Ad Auction Gym is a simulation environment for search advertising auctions, extended into a public LLM benchmark with a web leaderboard. It pits language models against baseline bidding strategies in realistic scenarios, measuring not just final performance but how quickly agents learn to optimize over time.
+Ad Arena provides a simulation environment for search advertising auctions, extended into a public LLM benchmark with a web leaderboard. It pits language models against baseline bidding strategies in realistic scenarios, measuring not just final performance but how quickly agents learn to optimize over time.
 
 ## The Problem
 
