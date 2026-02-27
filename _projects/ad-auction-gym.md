@@ -1,0 +1,86 @@
+---
+title: "Ad Auction Gym"
+excerpt: "A simulation environment and LLM benchmark for search advertising bidding strategies"
+---
+
+> A simulation environment and LLM benchmark for search advertising bidding strategies
+{: .prompt-info}
+
+## TL;DR
+
+Ad Auction Gym is a simulation environment for search advertising auctions, extended into a public LLM benchmark with a web leaderboard. It pits language models against baseline bidding strategies in realistic scenarios, measuring not just final performance but how quickly agents learn to optimize over time.
+
+## The Problem
+
+Search advertising is a sequential decision-making problem: each day, a bidder decides which keywords to bid on, how much to bid, what ad copy to show, and how to pace budget while competing in second-price auctions with noisy, partial feedback.
+
+This makes it a natural testbed for LLM agents. But fair evaluation requires controlled environments, reproducible runs, standardized scenarios, and metrics that capture learning dynamics rather than just final scores.
+
+## Architecture
+
+The system extends an existing auction simulation engine with several new layers.
+
+### Multi-Scenario Support
+
+YAML-defined scenarios loaded from a scenarios directory. Each scenario specifies keywords, budgets, competitor configurations, and duration. New scenarios are picked up automatically with no code changes needed.
+
+### Benchmark Harness
+
+Orchestrates an LLM x scenario matrix. For each (model, scenario) pair, the harness derives deterministic seeds, runs the episode via the auction engine, computes adaptation metrics from daily logs, and persists structured results as JSON.
+
+Seed derivation ensures that the same seed + scenario + model always produces an identical simulation, while different models get different seeds so they face distinct auction sequences.
+
+### Expanded Bidder Control Surface
+
+Beyond basic keyword bids, agents can set:
+
+- Audience modifiers: bid multipliers per user segment (e.g., bid 1.5x for enthusiast users)
+- Daypart modifiers: bid multipliers by hour range (e.g., bid higher during peak hours)
+- Ad variants: multiple headlines per keyword for A/B testing, with per-variant performance stats fed back
+
+### Adaptation Measurement
+
+The key differentiator. Rather than just measuring final profit, the system tracks how agents learn:
+
+- Strategy volatility: how much the bidding strategy changes day-to-day (Jaccard distance on keyword sets + normalized bid changes)
+- Learning rate: profit improvement from early to late episodes
+- Convergence day: when the agent's strategy stabilizes
+- Learning vs. optimizing days: partitioning the episode into exploration and exploitation phases
+
+### Web Leaderboard
+
+A static HTML leaderboard published to GitHub Pages with sortable columns, scenario filtering, and methodology explanation. All self-contained with no external dependencies.
+
+## The Auction Pipeline
+
+Each simulated day:
+
+1. User queries arrive, drawn from the scenario's keyword distribution
+2. Bids are collected from the LLM agent and competitor bots, with audience and daypart modifiers applied
+3. Second-price auction runs with quality scoring
+4. User behavior is simulated with clicks and conversions based on ad relevance and user profiles
+5. Feedback is returned with per-keyword and per-variant stats, budget remaining, and market signals
+
+The agent sees daily feedback and must decide tomorrow's strategy. Over 30 days, good agents learn which keywords convert, how to pace budget, and how to outbid competitors efficiently.
+
+## Competitor Bots
+
+Three built-in bot types create a competitive landscape:
+
+- Aggressive: high bids, burns budget fast
+- Conservative: low bids, preserves budget
+- Smart: adapts bids based on historical performance
+
+## Scoring
+
+Models are ranked by mean profit across scenarios. Secondary metrics include ROAS, CPA, CTR, CVR, learning rate, and API call count, giving a multi-dimensional view of agent capability and efficiency.
+
+## What Makes This Interesting
+
+Most LLM benchmarks measure static capabilities. Ad Auction Gym measures dynamic learning: can the model improve its strategy over time in a competitive, noisy environment with partial feedback?
+
+The adaptation metrics make it possible to distinguish between a model that gets lucky on day 1 and one that systematically learns to optimize.
+
+---
+
+*Currently in active development. Leaderboard and benchmark scenarios coming soon.*
