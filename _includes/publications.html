@@ -1,0 +1,40 @@
+{%- comment -%}
+  Render the publication list from `_data/publications.yml`.
+
+  Arguments:
+    selected: if true, only entries flagged `selected: true`
+    limit:    maximum number of entries to render (optional)
+{%- endcomment -%}
+
+{%- if include.selected -%}
+  {%- assign pubs = site.data.publications | where: 'selected', true -%}
+{%- else -%}
+  {%- assign pubs = site.data.publications -%}
+{%- endif -%}
+
+{%- if include.limit -%}
+  {%- assign pubs = pubs | slice: 0, include.limit -%}
+{%- endif -%}
+
+{%- capture me -%}<strong>{{ site.social.name }}</strong>{%- endcapture -%}
+
+<ul class="pub-list">
+  {%- for pub in pubs -%}
+    <li class="pub-item">
+      <span class="pub-title">
+        {%- if pub.url -%}
+          <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+        {%- else -%}
+          {{ pub.title }}
+        {%- endif -%}
+      </span>
+      <span class="pub-authors">{{ pub.authors | replace: site.social.name, me }}</span>
+      <span class="pub-venue">
+        <em>{{ pub.venue }}</em>
+        {%- if pub.volume %}, {{ pub.volume }}{% endif -%}
+        {%- if pub.year %}, {{ pub.year }}{% endif -%}.
+      </span>
+      {%- if pub.note %}<span class="pub-note">{{ pub.note }}</span>{% endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

@@ -1,0 +1,51 @@
+# Publications, newest first.
+#
+# Rendered by `_includes/publications.html`.
+#   selected: true  -> also shown in the "Selected Publications" block on the homepage
+#   url:            -> optional; when set, the title becomes a link
+#   note:           -> optional; awards, status, etc.
+#
+# The author whose name matches `site.social.name` is bolded automatically.
+
+- title: "Online Matching with Bayesian Rewards"
+  authors: "David Simchi-Levi, Rui Sun, Xinshang Wang"
+  venue: "Operations Research"
+  volume: "73(1)"
+  year: 2025
+  selected: true
+
+- title: "Calibrating Sales Forecasts in a Pandemic Using Competitive Online Nonparametric Regression"
+  authors: "David Simchi-Levi, Rui Sun, Michelle Xiao Wu, Ruihao Zhu"
+  venue: "Management Science"
+  volume: "70(10)"
+  year: 2024
+  note: "INFORMS Innovative Applications in Analytics Award, 2nd Place (2022)"
+  selected: true
+
+- title: "Online Learning and Optimization for Revenue Management Problems with Add-on Discounts"
+  authors: "David Simchi-Levi, Rui Sun, Huanan Zhang"
+  venue: "Management Science"
+  volume: "68(10)"
+  year: 2022
+  selected: true
+
+- title: "Near-Optimal Primal-Dual Algorithms for Quantity-Based Network Revenue Management"
+  authors: "Rui Sun, Xinshang Wang, Zijie Zhou"
+  venue: "arXiv preprint"
+  volume: "arXiv:2011.06327"
+  year: 2020
+  url: "https://arxiv.org/abs/2011.06327"
+  note: "Under revision, Mathematics of Operations Research"
+  selected: true
+
+- title: "Large-Scale Price Optimization for an Online Fashion Retailer"
+  authors:
+    "Hanwei Li, David Simchi-Levi, Rui Sun, Michelle Xiao Wu, Vladimir Fux, Torsten Gellert,
+    Thorsten Greiner, Andrea Taverna"
+  venue: "Innovative Technology at the Interface of Finance and Operations, Vol. II"
+  year: 2021
+
+# Omitted from the site (still on Google Scholar):
+#   Variable Speed Limit Design to Relieve Traffic Congestion Based on Cooperative
+#   Vehicle Infrastructure System — Procedia, 2014. Most-cited but least relevant;
+#   it dilutes an otherwise coherent online-learning record.

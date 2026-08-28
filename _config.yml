@@ -14,11 +14,13 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: The Thinking Notes
+title: Rui Sun
 
-tagline: ""
+tagline: "LLM post-training · RL · agent evaluation"
 
 description: >-
+  Rui Sun — researcher working on LLM post-training, reinforcement learning with
+  verifiable rewards, and benchmarks for agentic reasoning.
 
 url: "https://ruisun33.github.io"
 
@@ -29,11 +31,12 @@ twitter:
   username: ""
 
 social:
-  name: R S
-  email: ""
+  name: Rui Sun
+  email: "sunruimit@gmail.com"
   links:
     - https://github.com/ruisun33
     - https://www.linkedin.com/in/ruisun12/
+    - https://scholar.google.com/citations?user=83Q2zz4AAAAJ
 
 # Site Verification Settings
 webmaster_verifications:
@@ -79,7 +82,9 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: light
+# Empty enables Chirpy 7.6's Light / Dark / System control in the nav bar.
+# Note: with no value, the initial theme follows the visitor's OS setting.
+theme_mode:
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
@@ -128,17 +133,23 @@ assets:
     # only works if `assets.self_host.enabled` is 'true'
     env: # [development | production]
 
+# Disabled deliberately. The service worker cached pages aggressively and served
+# stale copies after updates, which for a site this size buys almost nothing and
+# means returning visitors can sit on an old build until Chirpy's update prompt
+# fires. Re-enable only if offline access becomes worth that trade.
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false # The option for PWA feature (installable)
   cache:
-    enabled: true # The option for PWA offline cache
+    enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
-paginate: 10
+# Pagination is disabled: the homepage is a landing page, and the post feed
+# lives at /blog/ (see `_layouts/blog.html`), which lists all posts unpaginated.
+# To re-enable, set `paginate: 10` and give `_tabs/blog.html` pagination support.
 
 # The base URL of your site
 baseurl: ""

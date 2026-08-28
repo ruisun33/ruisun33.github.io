@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+{% comment %}
+  Academic landing page. Overrides the theme's post-feed home layout — the feed
+  now lives at /blog/ via `_layouts/blog.html`.
+
+  Hero content comes from the page's front matter (`role`, `affiliations`,
+  `links`); the body below the hero is the page's own Markdown.
+{% endcomment %}
+
+{% include lang.html %}
+
+<article class="px-1" id="landing">
+  <header class="landing-hero">
+    {%- comment -%}
+      The photo lives in the sidebar rail by default. Set `hero_avatar: true` in
+      this page's front matter to show it here as well.
+    {%- endcomment -%}
+    {%- if page.hero_avatar and site.avatar != empty and site.avatar -%}
+      {%- capture avatar_url -%}
+        {% include media-url.html src=site.avatar %}
+      {%- endcapture -%}
+      <img
+        class="landing-avatar"
+        src="{{ avatar_url | strip }}"
+        width="150"
+        height="150"
+        alt="{{ site.social.name }}"
+        onerror="this.style.display='none'"
+      >
+    {%- endif -%}
+
+    <div class="landing-intro">
+      <h1 class="landing-name">{{ site.social.name }}</h1>
+
+      {%- if page.role %}
+        <p class="landing-role">{{ page.role }}</p>
+      {%- endif %}
+
+      {%- if page.affiliations %}
+        <p class="landing-affiliations">
+          {%- for item in page.affiliations -%}
+            <span>{{ item }}</span>
+            {%- unless forloop.last %}<span class="sep" aria-hidden="true">·</span>{% endunless -%}
+          {%- endfor -%}
+        </p>
+      {%- endif %}
+
+      {%- if page.links %}
+        <p class="landing-links">
+          {%- for link in page.links -%}
+            <a
+              href="{{ link.url }}"
+              {%- if link.url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif -%}
+            >
+              <i class="fa-fw {{ link.icon }}"></i>{{ link.name }}
+            </a>
+          {%- endfor -%}
+        </p>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+</article>

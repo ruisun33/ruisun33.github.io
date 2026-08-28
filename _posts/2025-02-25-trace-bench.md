@@ -1,9 +1,11 @@
 ---
 title: "Trace-Bench"
+description: "A simulator that manufactures causal ground truth: 6,000 synthetic root-cause episodes that work both as a benchmark and as a reward signal to train against."
 date: 2025-02-25
 categories: [Projects]
 tags: [benchmark, reinforcement-learning, agentic-ai]
 pin: false
+featured: 1
 ---
 
 > A benchmark and RL training substrate for evaluating causal diagnostic reasoning in AI agents

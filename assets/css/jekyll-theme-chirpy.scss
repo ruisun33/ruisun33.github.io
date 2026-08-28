@@ -1,0 +1,716 @@
+---
+---
+
+/* Narrow the sidebar rail. `$sidebar-width` is a Sass `!default`, and a module
+   is configured by whichever `@use` loads it first — so this must stay above the
+   `@use 'main'` below. 260px exists to hold Chirpy's avatar, tagline and eight
+   blog tabs; three academic nav items don't need it. */
+@use 'abstracts/variables' with (
+  $sidebar-width: 210px,
+  $sidebar-width-large: 230px,
+  $sb-btn-gap: 0.45rem,
+  $sb-btn-gap-lg: 0.55rem
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* ==========================================================================
+   Academic personal-site overrides.
+
+   Everything below is additive to the Chirpy theme: a serif display face for
+   headings, a quieter link colour, list styles for publications/projects, and
+   the landing-page hero. No theme file is forked, so `bundle update` is safe.
+   ========================================================================== */
+
+$serif: Charter, 'Bitstream Charter', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+
+/* Hairline rules. A single dark value is invisible on a dark background, so this
+   is a custom property set per theme below rather than a Sass constant. */
+$rule: var(--rule-color);
+
+/* Width of the text column, and the single gutter shared by the nav bar and the
+   page content so both align on the same vertical lines. */
+$measure-px: 900px;
+$gutter: 1.5rem;
+
+/* --- Palette refinements -------------------------------------------------- */
+
+@mixin palette-light {
+  --rule-color: rgb(0 0 0 / 9%);
+  --link-color: #1e5a8a;
+  --link-underline-color: #d3dde5;
+  --heading-color: #1c1f23;
+  --site-title-color: #2f3337;
+  --site-subtitle-color: #6b7075;
+
+  /* Light/dark switch. Its own entries rather than the theme's sidebar button
+     vars: those were picked for a tinted rail, and on the bar the knob ends up
+     the same value as its track. A switch only reads as one if the knob stays
+     clearly lighter than the track in both themes. */
+  --switch-track-bg: #d3d6da;
+  --switch-knob-bg: #fff;
+  --switch-knob-fg: #55595e;
+}
+
+@mixin palette-dark {
+  --rule-color: rgb(255 255 255 / 13%);
+  --link-color: #7fb6e0;
+  --link-underline-color: #3a4a57;
+  --switch-track-bg: #33373c;
+  --switch-knob-bg: #d8dade;
+  --switch-knob-fg: #2b2f34;
+}
+
+/* Mirrors Chirpy's own selector structure (`data-bs-theme`, as of 7.6.0) so
+   these land after the theme's values at equal specificity. */
+:root[data-bs-theme='light'] {
+  @include palette-light;
+}
+
+:root[data-bs-theme='dark'] {
+  @include palette-dark;
+}
+
+:root:not([data-bs-theme]) {
+  @media (prefers-color-scheme: light) {
+    @include palette-light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include palette-dark;
+  }
+}
+
+/* --- Typography: serif display, sans body --------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h1.dynamic-title,
+#post-list .card-title,
+.landing-name,
+.pub-title,
+.project-title {
+  font-family: $serif;
+  letter-spacing: -0.005em;
+}
+
+/* --- Navigation: relocated from the left rail to a top bar -----------------
+   Chirpy's #sidebar is `position: fixed`, full-height, `width: $sidebar-width`,
+   and slides in as a drawer below `lg`, with #main-wrapper offset by its width.
+   The rules below undo all of that and lay the same markup out horizontally, so
+   no Liquid is forked. Order matters: several of the theme's classes are
+   Bootstrap utilities (`d-flex flex-column`, `w-100`, `align-items-end`) that
+   carry `!important`, so the overrides need it too. */
+
+#sidebar {
+  position: sticky;
+  top: 0;
+  left: auto;
+  z-index: 20;
+  width: 100% !important;
+  height: auto;
+  min-height: 4.25rem;
+  overflow: visible;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0.9rem 1.5rem !important;
+  border-bottom: 1px solid var(--sidebar-border-color);
+  transform: none !important; /* defeats the mobile drawer */
+
+  @media (width >= 1650px) {
+    width: 100% !important;
+  }
+
+  /* The name and tagline are on the landing page. `!important` is needed because
+     the markup is `<a class="site-title d-block">` and Bootstrap's `.d-block`
+     is itself `display: block !important`. */
+  .site-title,
+  .site-subtitle {
+    display: none !important;
+  }
+
+  /* The whole profile block goes: the photo, name and role are in the page
+     hero, and the HOME tab covers the link the avatar used to provide. */
+  .profile-wrapper {
+    display: none;
+  }
+
+  nav {
+    flex-grow: 0 !important;
+    width: auto !important;
+
+    /* Cancels the first link's own padding so its text, not its hit area,
+       lines up with the left edge of the text column. */
+    margin-left: -0.85rem;
+  }
+
+  ul {
+    margin-bottom: 0 !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li.nav-item {
+      width: auto !important;
+      margin: 0 0.15rem 0 0;
+      padding-inline: 0 !important;
+
+      &:not(:first-child) {
+        margin-top: 0 !important;
+      }
+
+      a.nav-link {
+        padding: 0.5rem 0.9rem !important;
+
+        /* Text-only tabs. The `icon:` values are kept in each tab's front
+           matter so this is reversible, but `fa-fw` reserves a fixed 1.25em
+           whether or not a glyph resolves, so they have to be hidden here
+           rather than by emptying the front matter. */
+        i {
+          display: none;
+        }
+
+        /* The theme wraps each label in a span held at 90%, which capped the
+           size set on the anchor below. */
+        span {
+          font-size: 100%;
+        }
+      }
+    }
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Keeps the theme's light/dark/system control, drops the contact icons: the
+     same four links are in the page hero, and they crowded the bar. */
+  .sidebar-bottom {
+    position: absolute;
+    right: calc(
+      max(0px, (100vw - #{$measure-px} - #{$gutter} * 2) / 2) + #{$gutter}
+    );
+    top: 50%;
+    transform: translateY(-50%);
+    flex: none;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    > a,
+    .icon-border {
+      display: none !important;
+    }
+  }
+
+  /* The three-way menu is replaced by a two-state toggle (see
+     _includes/metadata-hook.html), so the menu itself never shows. */
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  /* A pill-shaped slide switch rather than the theme's round button. The knob's
+     position carries the state, which also settles the sun-versus-gear problem:
+     a slider can't be misread as a settings button the way a lone round icon
+     can, so the glyph only has to label the state, not announce the control.
+
+     Note the selector: the theme styles this as `#sidebar .sidebar-bottom
+     #mode-toggle`, so a bare `#mode-toggle` here loses on specificity and the
+     button silently stays a 1.75rem circle. The `.sidebar-bottom` is matched to
+     draw level, and this stylesheet loads after the theme's, so it wins on
+     order. Chirpy's `margin-bottom` is reset for the same reason -- left in, it
+     pads the wrapper 8px taller than the switch and floats it above the tabs'
+     baseline. */
+  .sidebar-bottom #mode-toggle {
+    position: relative;
+    width: 3.75rem;
+    height: 1.7rem;
+    flex: none;
+    padding: 0;
+    margin-bottom: 0;
+    border-radius: 999px;
+    background-color: var(--switch-track-bg);
+    transition: background-color 0.25s ease-in-out;
+
+    /* The theme repaints this on hover with a colour meant for the rail. */
+    &:hover {
+      background-color: var(--switch-track-bg);
+      filter: brightness(0.96);
+    }
+  }
+
+  /* The icon is swapped in JS (see _includes/metadata-hook.html), which also
+     sets `.mode-dark` for the knob position. The theme hides `#mode-toggle > i`
+     by default and only reveals the ones carrying a `data-theme-mode`, so the
+     replacement needs explicitly un-hiding. */
+  .sidebar-bottom #mode-toggle > i {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    left: 0.17rem;
+    align-items: center;
+    justify-content: center;
+    width: 1.36rem;
+    height: 1.36rem;
+    border-radius: 50%;
+    background-color: var(--switch-knob-bg);
+    color: var(--switch-knob-fg);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 22%);
+    font-size: 0.85rem;
+    line-height: 1;
+    transform: translateY(-50%);
+
+    /* All three ease together on the same clock as the track. Transitioning
+       only `transform` left the knob's fill and glyph colour snapping at t=0
+       while it was still travelling, which reads as the colour changing ahead
+       of the slide. */
+    transition:
+      transform 0.25s ease-in-out,
+      background-color 0.25s ease-in-out,
+      color 0.25s ease-in-out;
+  }
+
+  .sidebar-bottom #mode-toggle.mode-dark > i {
+    /* Track minus knob minus both insets: 3.75 - 1.36 - 0.17 * 2. */
+    transform: translate(2.05rem, -50%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sidebar-bottom #mode-toggle > i {
+      transition: none;
+    }
+  }
+}
+
+/* The rail's width was reserved here, and the drawer translated it. */
+#main-wrapper {
+  margin-left: 0 !important;
+  transform: none !important;
+}
+
+/* One bar, not two: the theme's breadcrumb strip also holds the search field and
+   the drawer's hamburger, neither of which applies now that the nav is always
+   visible. Hidden rather than removed so Chirpy's search JS still finds its
+   nodes. */
+#topbar-wrapper {
+  display: none;
+}
+
+/* Below 850px the theme hides the page heading and adds a compensating margin,
+   because its topbar shows the title at that size instead. That bar is hidden
+   just above, so without this /blog/ and /projects/ would have no heading at
+   all on a phone. */
+@media all and (width <= 849px) {
+  h1.dynamic-title {
+    display: block;
+  }
+
+  h1.dynamic-title ~ .content {
+    margin-top: 0;
+  }
+}
+
+@media (width <= 767px) {
+  #sidebar {
+    padding-inline: 1rem !important;
+  }
+}
+
+.content {
+  h2 {
+    margin-top: 2.4rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid $rule;
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.12rem;
+  }
+
+  /* Compact tables read better for CV-style key/value rows. */
+  table {
+    font-size: 0.92rem;
+
+    td,
+    th {
+      border-color: $rule;
+    }
+  }
+}
+
+.tab-intro {
+  color: var(--text-muted-color);
+}
+
+/* --- Landing page --------------------------------------------------------- */
+
+#landing {
+  .landing-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.75rem;
+    margin: 1.75rem 0 2.5rem;
+  }
+
+  .landing-avatar {
+    width: 150px;
+    height: 150px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--img-bg);
+  }
+
+  .landing-intro {
+    flex: 1 1 17rem;
+    min-width: 0;
+  }
+
+  /* Without the photo the hero is a single column, so the name carries it. */
+  .landing-hero:not(:has(.landing-avatar)) .landing-name {
+    font-size: 2.4rem;
+  }
+
+  .landing-name {
+    margin: 0 0 0.3rem;
+    font-size: 2.05rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--heading-color);
+  }
+
+  .landing-role {
+    margin: 0 0 0.2rem;
+    font-size: 1.02rem;
+  }
+
+  .landing-affiliations {
+    margin: 0 0 0.9rem;
+    font-size: 0.875rem;
+    color: var(--text-muted-color);
+
+    .sep {
+      margin: 0 0.4rem;
+      opacity: 0.5;
+    }
+  }
+
+  .landing-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.15rem;
+    margin: 0;
+    font-size: 0.9rem;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  > .content > h2:first-of-type {
+    margin-top: 1.6rem;
+  }
+
+  /* The homepage carries its own "Recent Writing" list, so the theme's
+     side panel would only repeat it. */
+  ul li {
+    margin-top: 0.3rem;
+  }
+}
+
+.row:has(#landing) > #panel-wrapper {
+  display: none;
+}
+
+@media (width <= 576px) {
+  #landing .landing-hero {
+    gap: 1.1rem;
+  }
+
+  #landing .landing-avatar {
+    width: 104px;
+    height: 104px;
+  }
+
+  #landing .landing-name {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- Publication list (homepage) ------------------------------------------ */
+
+.pub-list {
+  padding-left: 0;
+  list-style: none;
+
+  .pub-item {
+    margin-bottom: 1.15rem;
+    line-height: 1.45;
+  }
+
+  .pub-title,
+  .pub-authors,
+  .pub-venue,
+  .pub-note {
+    display: block;
+  }
+
+  .pub-title {
+    font-size: 1.01rem;
+    font-weight: 600;
+    color: var(--heading-color);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .pub-authors {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+
+    strong {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+  }
+
+  .pub-venue {
+    font-size: 0.875rem;
+    color: var(--text-muted-color);
+  }
+
+  .pub-note {
+    margin-top: 0.15rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text-muted-color);
+  }
+}
+
+/* --- Project + writing lists (homepage) ----------------------------------- */
+
+.project-list {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 1.1rem;
+  }
+
+  .project-title {
+    display: block;
+    font-size: 1.01rem;
+    font-weight: 600;
+  }
+
+  .project-blurb {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted-color);
+  }
+}
+
+.writing-list {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid $rule;
+  }
+
+  /* Title and date share a baseline; the blurb sits underneath both. */
+  .writing-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  time {
+    flex: none;
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+  }
+
+  .writing-blurb {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted-color);
+  }
+}
+
+.section-more {
+  margin-top: 0.7rem;
+  font-size: 0.875rem;
+}
+
+/* --- Research page project blocks ----------------------------------------- */
+
+.project-meta {
+  font-size: 0.875rem;
+  color: var(--text-muted-color);
+}
+
+/* --- CV-style key/value rows (About) -------------------------------------- */
+
+.cv-list {
+  margin: 0 0 1.25rem;
+
+  dt {
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  dd {
+    margin: 0 0 0.7rem;
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+  }
+
+  @media (width >= 768px) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 0.45rem 2rem;
+
+    dt,
+    dd {
+      margin: 0;
+    }
+
+    dd {
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* --- Post feed: list rows rather than floating cards ---------------------- */
+
+#post-list {
+  margin-top: 1.5rem;
+
+  .card-wrapper.card {
+    border: 0;
+    border-bottom: 1px solid $rule;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  /* The theme draws the card frame on the inner anchor, not the wrapper. */
+  .post-preview {
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+
+    &::before {
+      border-radius: 0;
+    }
+  }
+
+  .card-body {
+    padding: 1.15rem 0 !important;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Print ---------------------------------------------------------------- */
+
+@media print {
+  .section-more,
+  #landing .landing-links {
+    display: none;
+  }
+}
+
+/* Framing line under a section heading (e.g. the publications preamble). */
+.section-note {
+  margin-top: -0.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+}
+
+/* --- Content column, now that the left rail is gone -----------------------
+   With no rail reserving space, the grid's empty right-hand panel column left
+   the text hugging the left edge. Posts keep the 9/3 split for their TOC;
+   everywhere else the main column takes the full container. */
+
+/* One shared gutter for the bar and the page, so the tabs, the toggle and the
+   body text all sit on the same two vertical lines at every width. Chirpy's own
+   `px-xxl-5` on the container and `px-md-4` on <main> change at breakpoints, so
+   they're zeroed and replaced with a single value. */
+
+#main-wrapper > .container {
+  max-width: calc(#{$measure-px} + #{$gutter} * 2);
+  padding-inline: $gutter !important;
+
+  /* The theme's breadcrumb strip used to provide this gap; it's hidden now. */
+  padding-top: 1.25rem;
+}
+
+#main-wrapper > .container > .row > main,
+#tail-wrapper {
+  padding-inline: 0 !important;
+}
+
+#panel-wrapper:not(:has(#toc-wrapper)) {
+  display: none;
+}
+
+/* Posts keep the theme's 9/3 split, so their text column is narrower than the
+   full-width columns elsewhere. That's deliberate: #main-wrapper is a
+   `justify-content: center` flex container, so any attempt to widen or offset
+   the container on post pages only shifts the text out of line with the nav bar
+   (margins offset a flex item from centre rather than positioning it).
+   The TOC gap therefore comes from the panel's own padding. */
+#main-wrapper > .container > .row > #panel-wrapper {
+  padding-left: 3rem !important;
+  padding-right: 0 !important;
+}
+
+/* The panel is narrow once that gap is taken out, so let long headings wrap
+   instead of being clipped to one ellipsised line. */
+#toc-wrapper .toc-link {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.35;
+}
+
+.row:not(:has(#panel-wrapper #toc-wrapper)) > main {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Align the nav bar's contents with the text column instead of the viewport. */
+#sidebar {
+  padding-inline: calc(
+    max(0px, (100vw - #{$measure-px} - #{$gutter} * 2) / 2) + #{$gutter}
+  ) !important;
+}

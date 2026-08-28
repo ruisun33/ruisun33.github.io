@@ -1,9 +1,11 @@
 ---
 title: "Dynamic Context Management"
+description: "Reframing LLM context management as constrained resource allocation, and solving it online with Primal-Dual Thompson Sampling."
 date: 2025-02-24
 categories: [Projects]
 tags: [context-management, thompson-sampling, test-time-optimization]
 pin: false
+featured: 2
 ---
 
 > Adaptive context management for LLMs via Primal-Dual Thompson Sampling

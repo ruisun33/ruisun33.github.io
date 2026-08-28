@@ -1,0 +1,117 @@
+<!-- Chirpy includes this at the end of <head>; it exists as a customisation hook,
+     so using it avoids forking any theme file. -->
+
+<script>
+  /* Light is the default, regardless of the visitor's OS setting.
+
+     With `theme_mode` left empty in _config.yml, Chirpy follows the OS, so
+     anyone on a dark desktop lands on the dark site. This runs synchronously
+     and deliberately: `theme.min.js` loads earlier in <head> so Chirpy has
+     already applied its choice, but the body has not painted yet, so setting
+     the attribute here decides the first frame instead of causing a flash.
+
+     An explicit choice from the switch is persisted by Chirpy and flagged with
+     `data-theme-persisted`, and is never overridden. */
+  (function () {
+    var root = document.documentElement;
+
+    if (!root.hasAttribute('data-theme-persisted')) {
+      root.setAttribute('data-bs-theme', 'light');
+    }
+  })();
+</script>
+
+<script>
+  /* Chirpy 7.6 ships the theme control as a three-way Light / Dark / System
+     dropdown. This collapses it to a plain two-state toggle.
+
+     It works by clicking the theme's own hidden menu items rather than writing
+     the persisted state directly, so all of Chirpy's switching and storage
+     logic stays in one place and keeps working across theme upgrades. */
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('mode-toggle');
+
+    if (!btn) {
+      return; /* site.theme_mode is pinned, so the control isn't rendered */
+    }
+
+    /* Stops Bootstrap treating the button as a dropdown trigger. */
+    btn.removeAttribute('data-bs-toggle');
+
+    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    /* Chirpy renders three icons here (sun / moon / monitor) and picks one via
+       CSS. They're replaced with a single glyph that reflects the live state:
+       a moon while the page is light, a sun while it's dark -- so the button
+       always pictures the mode you're currently in. Both are the solid
+       variants; at 14px the regular-weight sun is a ring of thin rays that
+       reads as a gear. */
+    var ICON = {
+      light: 'fa-solid fa-moon',
+      dark: 'fa-solid fa-sun'
+    };
+
+    /* The knob is built once and then only reclassed. Replacing it via
+       innerHTML on every switch looked like the track changing colour early:
+       a brand-new element has no previous computed transform, so it has nothing
+       to animate from and jumps straight to the far end, while the track (never
+       recreated) kept animating over its full duration. */
+    var knob = document.createElement('i');
+    btn.textContent = '';
+    btn.appendChild(knob);
+
+    /* It reads as a switch, so expose it as one to assistive tech. */
+    btn.setAttribute('role', 'switch');
+
+    /* No `data-bs-theme` attribute means the theme is still following the OS. */
+    function currentTheme() {
+      var attr = document.documentElement.getAttribute('data-bs-theme');
+
+      if (attr === 'light' || attr === 'dark') {
+        return attr;
+      }
+
+      return darkQuery.matches ? 'dark' : 'light';
+    }
+
+    function render() {
+      var current = currentTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      var label = 'Switch to ' + next + ' mode';
+
+      knob.className = ICON[current];
+      btn.setAttribute('title', label);
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('aria-checked', current === 'dark' ? 'true' : 'false');
+
+      /* Drives the knob's position; the slide itself is a CSS transition. */
+      btn.classList.toggle('mode-dark', current === 'dark');
+    }
+
+    btn.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      var item = document.querySelector(
+        '.dropdown-item[data-theme-mode="' + next + '"]'
+      );
+
+      if (item) {
+        item.click();
+      }
+    });
+
+    /* Chirpy owns the switching, so the icon follows the attribute it sets
+       rather than being updated inside the click handler. That also keeps the
+       two in step if the theme changes by any other route. */
+    new MutationObserver(render).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-bs-theme']
+    });
+
+    /* While no explicit choice is stored, the page tracks the OS setting. */
+    darkQuery.addEventListener('change', render);
+
+    render();
+  });
+</script>
