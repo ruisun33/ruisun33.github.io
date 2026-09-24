@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Conservation of Knowledge: Why Every Good Reward Is Borrowed"
 description: "Every reward signal that speeds up training is knowledge borrowed from somewhere. A conservation law for RL training signal — and the one place it breaks."
 date: 2026-06-30

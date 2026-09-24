@@ -23,7 +23,7 @@
    Academic personal-site overrides.
 
    Everything below is additive to the Chirpy theme: a serif display face for
-   headings, a quieter link colour, list styles for publications/projects, and
+   headings, a quieter link colour, list styles for research, and
    the landing-page hero. No theme file is forked, so `bundle update` is safe.
    ========================================================================== */
 
@@ -95,7 +95,6 @@ h4,
 h1.dynamic-title,
 #post-list .card-title,
 .landing-name,
-.pub-title,
 .project-title {
   font-family: $serif;
   letter-spacing: -0.005em;
@@ -306,7 +305,7 @@ h1.dynamic-title,
 
 /* Below 850px the theme hides the page heading and adds a compensating margin,
    because its topbar shows the title at that size instead. That bar is hidden
-   just above, so without this /blog/ and /projects/ would have no heading at
+   just above, so without this /blog/ and /research/ would have no heading at
    all on a phone. */
 @media all and (width <= 849px) {
   h1.dynamic-title {
@@ -408,12 +407,20 @@ h1.dynamic-title,
   .landing-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem 1.15rem;
+    gap: 0.3rem 0.6rem;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 18px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+    }
 
     i {
-      margin-right: 0.3rem;
+      margin-right: 0;
     }
   }
 
@@ -447,60 +454,9 @@ h1.dynamic-title,
   }
 }
 
-/* --- Publication list (homepage) ------------------------------------------ */
-
-.pub-list {
-  padding-left: 0;
-  list-style: none;
-
-  .pub-item {
-    margin-bottom: 1.15rem;
-    line-height: 1.45;
-  }
-
-  .pub-title,
-  .pub-authors,
-  .pub-venue,
-  .pub-note {
-    display: block;
-  }
-
-  .pub-title {
-    font-size: 1.01rem;
-    font-weight: 600;
-    color: var(--heading-color);
-
-    a {
-      color: inherit;
-    }
-  }
-
-  .pub-authors {
-    font-size: 0.9rem;
-    color: var(--text-muted-color);
-
-    strong {
-      font-weight: 600;
-      color: var(--text-color);
-    }
-  }
-
-  .pub-venue {
-    font-size: 0.875rem;
-    color: var(--text-muted-color);
-  }
-
-  .pub-note {
-    margin-top: 0.15rem;
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--text-muted-color);
-  }
-}
-
 /* --- Project + writing lists (homepage) ----------------------------------- */
 
-.project-list {
+.research-list {
   padding-left: 0;
   list-style: none;
 
@@ -561,7 +517,7 @@ h1.dynamic-title,
 
 /* --- Research page project blocks ----------------------------------------- */
 
-.project-meta {
+.research-meta {
   font-size: 0.875rem;
   color: var(--text-muted-color);
 }
@@ -703,7 +659,8 @@ h1.dynamic-title,
   line-height: 1.35;
 }
 
-.row:not(:has(#panel-wrapper #toc-wrapper)) > main {
+.row:not(:has(#panel-wrapper #toc-wrapper)) > main,
+#main-wrapper > .container:not(:has(#panel-wrapper #toc-wrapper)) #tail-wrapper {
   flex: 0 0 100%;
   max-width: 100%;
 }
@@ -713,4 +670,182 @@ h1.dynamic-title,
   padding-inline: calc(
     max(0px, (100vw - #{$measure-px} - #{$gutter} * 2) / 2) + #{$gutter}
   ) !important;
+}
+
+/* Match the homepage article’s inner text edges. */
+#main-wrapper > .container:has(#landing) footer {
+  margin-inline: 0.25rem;
+}
+
+#landing .latest-news {
+  margin-top: 2.5rem;
+
+  h2 { margin: 0 0 0.75rem; }
+
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: grid;
+      grid-template-columns: 5rem minmax(0, 1fr);
+      gap: 0.25rem 0.65rem;
+      margin: 0 0 1rem;
+    }
+
+    time {
+      color: var(--text-muted-color);
+      font-size: 0.9em;
+      padding-top: 0.1em;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  #landing .latest-news .news-list li {
+    grid-template-columns: 1fr;
+  }
+}
+
+#landing .news-category {
+  color: var(--text-muted-color);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.research-visual {
+  margin: 1.25rem 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+}
+
+.not-found-message {
+  padding-block: 1.5rem;
+  max-width: 42rem;
+}
+
+.research-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--main-border-color);
+
+  .research-visual { margin: 0; }
+  h2 { margin-top: 0; }
+  .research-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    li {
+      margin: 0;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--main-border-color);
+      border-radius: 5px;
+      color: var(--text-muted-color);
+      font-size: 0.8rem;
+    }
+  }
+}
+.research-list { margin-bottom: 2rem; }
+@media (max-width: 767px) {
+  .research-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+}
+
+.research-row-header {
+  grid-column: 1 / -1;
+  .research-keywords { margin-bottom: 0; }
+}
+
+.research-title-line {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $rule;
+
+  h2 {
+    display: inline;
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .research-meta {
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0 0 0 0.65rem;
+    justify-content: flex-start;
+  }
+}
+
+/* Research titles use their Paper links instead of visible heading permalinks. */
+.research-row-header h2 > .anchor {
+  display: none;
+}
+
+.research-row-wide {
+  grid-template-columns: minmax(0, 1fr);
+  .research-visual img { background: #fff; }
+}
+.research-visual figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-muted-color);
+  font-size: 0.85rem;
+}
+
+.research-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+
+  .resource-tag {
+    display: inline-block;
+    position: relative;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    line-height: inherit;
+    text-decoration: none;
+  }
+
+  .resource-pending {
+    color: var(--text-muted-color);
+    cursor: default;
+  }
+
+  .resource-tag:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+  }
+
+  .resource-tooltip {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.4rem);
+    padding: 0.3rem 0.55rem;
+    border-radius: 4px;
+    background: var(--text-color);
+    color: var(--main-bg);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .resource-pending:hover .resource-tooltip,
+  .resource-pending:focus .resource-tooltip {
+    visibility: visible;
+  }
 }

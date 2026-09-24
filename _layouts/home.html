@@ -53,9 +53,11 @@ layout: default
           {%- for link in page.links -%}
             <a
               href="{{ link.url }}"
+              aria-label="{{ link.name | escape }}"
+              title="{{ link.name | escape }}"
               {%- if link.url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif -%}
             >
-              <i class="fa-fw {{ link.icon }}"></i>{{ link.name }}
+              <i class="fa-fw {{ link.icon }}" aria-hidden="true"></i>
             </a>
           {%- endfor -%}
         </p>

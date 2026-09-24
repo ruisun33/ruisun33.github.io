@@ -1,4 +1,5 @@
 ---
+published: false
 title: "The Geometry of Learnable Reward"
 description: "A framework for thinking about RL with verifiable signals: what makes a reward learnable, and where reward hacking comes from."
 date: 2025-02-25

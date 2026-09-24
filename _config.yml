@@ -16,7 +16,7 @@ timezone:
 
 title: Rui Sun
 
-tagline: "LLM post-training · RL · agent evaluation"
+tagline: "AI Researcher, Prev: @Amazon, PhD@MIT"
 
 description: >-
   Rui Sun — researcher working on LLM post-training, reinforcement learning with
@@ -28,12 +28,13 @@ github:
   username: ruisun33
 
 twitter:
-  username: ""
+  username: "Rs33me"
 
 social:
   name: Rui Sun
   email: "sunruimit@gmail.com"
   links:
+    - https://x.com/Rs33me
     - https://github.com/ruisun33
     - https://www.linkedin.com/in/ruisun12/
     - https://scholar.google.com/citations?user=83Q2zz4AAAAJ
@@ -149,7 +150,7 @@ pwa:
 
 # Pagination is disabled: the homepage is a landing page, and the post feed
 # lives at /blog/ (see `_layouts/blog.html`), which lists all posts unpaginated.
-# To re-enable, set `paginate: 10` and give `_tabs/blog.html` pagination support.
+# To re-enable, set `paginate: 10` and give `_tabs/blog.md` pagination support.
 
 # The base URL of your site
 baseurl: ""
@@ -169,6 +170,9 @@ kramdown:
       start_line: 1
 
 collections:
+  research:
+    output: false
+    sort_by: order
   tabs:
     output: true
     sort_by: order

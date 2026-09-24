@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320">
+  <rect x="1" y="1" width="958" height="318" rx="16" fill="#f4f6f8" stroke="#cbd5df" stroke-dasharray="8 6"/>
+  <rect x="442" y="74" width="76" height="58" rx="6" fill="none" stroke="#8294a6" stroke-width="2"/>
+  <path d="M450 121l20-23 15 15 12-13 13 21" fill="none" stroke="#8294a6" stroke-width="2"/>
+  <text x="480" y="186" text-anchor="middle" font-family="sans-serif" font-size="23" fill="#536579">Project visual</text>
+  <text x="480" y="220" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6b7c8e">Figure or demo coming soon</text>
+</svg>

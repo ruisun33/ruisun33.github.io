@@ -1,0 +1,35 @@
+<div class="research-list">
+  {% assign papers = site.research | sort: 'order' %}
+  {% for project in papers %}
+  <section class="research-row{% if project.image_wide %} research-row-wide{% endif %}" aria-labelledby="{{ project.slug }}">
+    <header class="research-row-header">
+      <div class="research-title-line">
+      <h2 id="{{ project.slug }}">{{ project.title | escape }}</h2>
+      <div class="research-meta" aria-label="Research resources">
+        <a class="resource-tag" href="{{ project.paper }}">Paper</a>
+        {% if project.code == "coming-soon" %}
+          <span class="resource-tag resource-pending" tabindex="0" role="link" aria-disabled="true" aria-label="Code, coming soon">Code<span class="resource-tooltip" aria-hidden="true">Coming soon</span></span>
+        {% elsif project.code %}
+          <a class="resource-tag" href="{{ project.code }}">Code</a>
+        {% endif %}
+        {% if project.huggingface == "coming-soon" %}
+          <span class="resource-tag resource-pending" tabindex="0" role="link" aria-disabled="true" aria-label="Hugging Face, coming soon">HF<span class="resource-tooltip" aria-hidden="true">Coming soon</span></span>
+        {% elsif project.huggingface %}
+          <a class="resource-tag" href="{{ project.huggingface }}" aria-label="Hugging Face">HF</a>
+        {% endif %}
+      </div>
+      </div>
+      <ul class="research-keywords" aria-label="Research topics">
+        {% for keyword in project.keywords %}<li>{{ keyword | escape }}</li>{% endfor %}
+      </ul>
+    </header>
+    <div class="research-row-visual">
+      {% include research-visual.html src=project.image alt=project.image_alt width=project.image_width height=project.image_height caption=project.image_caption source=project.image_source %}
+    </div>
+    <div class="research-row-body">
+      {{ project.content | markdownify }}
+
+    </div>
+  </section>
+  {% endfor %}
+</div>

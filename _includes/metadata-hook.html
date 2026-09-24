@@ -1,3 +1,8 @@
+{% if jekyll.environment == 'development' %}
+<!-- Refresh local styles after each rebuild, even when the browser caches CSS. -->
+<link rel="stylesheet" href="{{ '/assets/css/jekyll-theme-chirpy.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% endif %}
+
 <!-- Chirpy includes this at the end of <head>; it exists as a customisation hook,
      so using it avoids forking any theme file. -->
 

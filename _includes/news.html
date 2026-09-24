@@ -1,0 +1,19 @@
+<section class="latest-news" aria-labelledby="latest-news-heading">
+  <h2 id="latest-news-heading">Latest news</h2>
+  <ul class="news-list">
+    {% for item in site.data.news limit: 5 %}
+      {% assign category_icon = '' %}
+      {% case item.category %}
+        {% when 'Preprint' %}{% assign category_icon = '📄' %}
+        {% when 'Publication' %}{% assign category_icon = '📚' %}
+        {% when 'Blog' %}{% assign category_icon = '✍️' %}
+        {% when 'Release' %}{% assign category_icon = '🚀' %}
+        {% when 'Life update' %}{% assign category_icon = '🌱' %}
+      {% endcase %}
+      <li>
+        <time datetime="{{ item.date }}">{{ item.label }}</time>
+        <span class="news-text">{% if item.category %}<span class="news-category">{% if category_icon != empty %}<span aria-hidden="true">{{ category_icon }}</span> {% endif %}[{{ item.category | escape }}]</span> {% endif %}<a href="{{ item.url }}">{{ item.title | escape }}</a>{{ item.text | escape }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

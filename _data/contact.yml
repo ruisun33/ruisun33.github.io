@@ -13,6 +13,10 @@
 - type: github
   icon: "fab fa-github"
 
+- type: x
+  icon: "fa-brands fa-x-twitter"
+  url: "https://x.com/Rs33me"
+
 - type: linkedin
   icon: "fab fa-linkedin"
   url: "https://www.linkedin.com/in/ruisun12/"

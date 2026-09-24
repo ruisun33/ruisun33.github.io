@@ -1,0 +1,6 @@
+<figure class="research-visual">
+  <a href="{{ include.src | relative_url }}" target="_blank" rel="noopener" aria-label="Enlarge image: {{ include.alt | escape }}">
+    <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy" width="{{ include.width | default: 960 }}" height="{{ include.height | default: 320 }}">
+  </a>
+  {% if include.caption %}<figcaption>{{ include.caption | escape }}{% if include.source %} <a href="{{ include.source }}">Source</a>{% endif %}</figcaption>{% endif %}
+</figure>

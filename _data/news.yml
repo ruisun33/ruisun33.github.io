@@ -1,0 +1,9 @@
+# Latest updates, newest first. Copy an entry to add another update.
+# category: Preprint, Publication, Blog, Release, or Life update.
+# Only title is linked; optional text appears after the title.
+- date: "2026-09"
+  label: "Sep 2026"
+  category: "Preprint"
+  title: "TRACE: training reasoning agents for causal exploration with synthesized rewards"
+  text: "."
+  url: "https://arxiv.org/abs/2609.10315"
