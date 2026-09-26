@@ -64,7 +64,7 @@ analytics:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
   cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
+    id: 9d7cadef4bc44bf58bfea36e13f620a1 # Public beacon token; loaded only in production
   fathom:
     id: # fill in your Fathom Site ID
 
@@ -212,6 +212,7 @@ compress_html:
     envs: [development]
 
 exclude:
+  - diagrams
   - "*.gem"
   - "*.gemspec"
   - docs

@@ -1,8 +1,11 @@
 ---
 title: "Bandit Learning for Online Matching"
 order: 4
-image: "/assets/img/research/bandits.svg"
-image_alt: "Bandit Learning for Online Matching visual placeholder"
+image: "/assets/img/research/bandits-wide.svg"
+image_alt: "Online matching earns reward and updates beliefs while using limited capacity. Resource-period pairs become bandit arms; a relaxed linear program constructs individual policies that are coordinated into a feasible matching strategy."
+image_wide: true
+image_width: 1730
+image_height: 625
 keywords: ["Bayesian Learning", "Online Matching", "Bandits"]
 paper: "https://pubsonline.informs.org/doi/10.1287/opre.2021.0499"
 ---

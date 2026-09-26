@@ -31,12 +31,25 @@ _includes/metadata-hook.html adds local preview CSS cache handling and theme con
 
 ## Project visuals
 
-Each project currently has its own placeholder in assets/img/research/:
-trace.svg, primal-dual.svg, add-on.svg, and bandits.svg.
-To replace one with a PNG, JPG, SVG, or GIF, put the new file in that folder and
-change the image field in the corresponding _research/*.md file. Update image_alt too.
-The current placeholders use a 3:1 ratio. Adjust width/height in the visual include
-if the replacement images use a different ratio.
+Editable draw.io sources live in diagrams/research/. Open the .drawio files in
+https://app.diagrams.net/ using File > Open From > Device. Keep these sources in
+Git; the diagrams/ folder is excluded from the generated website.
+Export finished diagrams as SVG to assets/img/research/.
+
+TRACE currently uses trace-wide.svg, with source diagrams/research/trace-wide.drawio.
+The original square layout remains in trace.svg and diagrams/research/trace.drawio.
+The primal-dual entry uses
+primal-dual.svg, with editable source in diagrams/research/primal-dual.drawio.
+Add-on discounts uses add-on.svg with source diagrams/research/add-on.drawio.
+Bandit matching uses bandits.svg with source diagrams/research/bandits.drawio.
+All four research entries now have editable diagrams. Source notes beside each diagram
+document the paper references and any schematic simplifications.
+To replace an image with a PNG, JPG, SVG, or GIF, put the new file in assets/img/research/
+and update image, image_alt, image_width, and image_height in its _research entry.
+All research diagrams use the same displayed width, controlled by
+--research-visual-width in assets/css/jekyll-theme-chirpy.scss (currently 100%).
+Height follows each image's aspect ratio; clicking opens the full-size SVG.
+The original TRACE layout is retained as trace.svg and trace.drawio.
 
 ## News
 
@@ -107,5 +120,16 @@ Only `home.html` and `blog.html` need local layout overrides. The Chirpy gem sup
 names override the theme. The Research tab uses the inherited `page` layout and the
 local research include, so it does not need a separate research layout.
 
-The two blog articles currently have `published: false` while being revised.
-Remove that setting when each article is ready to appear on the site.
+The two reward learning articles are also stored in `_drafts/` while being revised.
+To publish one, move it to `_posts/` with a `YYYY-MM-DD-title.md` filename.
+Their original dates are preserved in the front matter.
+
+Research sections show the full description followed by the diagram.
+The order is controlled by _includes/research.html.
+
+The research page uses these wide diagrams: trace-wide.svg,
+primal-dual-wide.svg, add-on-wide.svg, and bandits-wide.svg. Their editable
+sources have matching names in diagrams/research/. Earlier versions are retained.
+
+Latest canvas sizes: TRACE and primal-dual 1760 × 625; add-on 1670 × 625;
+bandits 1730 × 625. Primal-dual-wide now contains the selected balanced layout.

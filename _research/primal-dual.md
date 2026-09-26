@@ -1,8 +1,11 @@
 ---
 title: "Primal-Dual Framework for Revenue Management"
 order: 2
-image: "/assets/img/research/primal-dual.svg"
-image_alt: "Primal-Dual Framework for Revenue Management visual placeholder"
+image: "/assets/img/research/primal-dual-wide.svg"
+image_alt: "Online resource allocation balances reward with capacity. The primal-dual loop updates resource values, while learned admission thresholds classify request types into accept, reject, or bid-price decisions without solving a global allocation plan."
+image_wide: true
+image_width: 1760
+image_height: 625
 keywords: ["Optimization", "Online Algorithms", "Revenue Management"]
 paper: "https://arxiv.org/abs/2011.06327"
 ---

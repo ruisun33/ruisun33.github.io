@@ -1,8 +1,11 @@
 ---
 title: "Online Learning with Add-on Discounts"
 order: 3
-image: "/assets/img/research/add-on.svg"
-image_alt: "Online Learning with Add-on Discounts visual placeholder"
+image: "/assets/img/research/add-on-wide.svg"
+image_alt: "A core purchase unlocks selected add-on discounts. UCB demand estimates feed an FPTAS that jointly chooses prices and discount offers; observed purchases update demand estimates."
+image_wide: true
+image_width: 1670
+image_height: 625
 keywords: ["Online Learning", "Multi-Armed Bandit", "Dynamic Pricing"]
 paper: "https://pubsonline.informs.org/doi/10.1287/mnsc.2021.4222"
 ---

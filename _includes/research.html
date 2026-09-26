@@ -23,12 +23,11 @@
         {% for keyword in project.keywords %}<li>{{ keyword | escape }}</li>{% endfor %}
       </ul>
     </header>
-    <div class="research-row-visual">
-      {% include research-visual.html src=project.image alt=project.image_alt width=project.image_width height=project.image_height caption=project.image_caption source=project.image_source %}
-    </div>
     <div class="research-row-body">
       {{ project.content | markdownify }}
-
+    </div>
+    <div class="research-row-visual">
+      {% include research-visual.html src=project.image alt=project.image_alt width=project.image_width height=project.image_height caption=project.image_caption source=project.image_source %}
     </div>
   </section>
   {% endfor %}
