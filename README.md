@@ -42,8 +42,7 @@ The primal-dual entry uses
 primal-dual.svg, with editable source in diagrams/research/primal-dual.drawio.
 Add-on discounts uses add-on.svg with source diagrams/research/add-on.drawio.
 Bandit matching uses bandits.svg with source diagrams/research/bandits.drawio.
-All four research entries now have editable diagrams. Source notes beside each diagram
-document the paper references and any schematic simplifications.
+All four research entries now have editable diagrams.
 To replace an image with a PNG, JPG, SVG, or GIF, put the new file in assets/img/research/
 and update image, image_alt, image_width, and image_height in its _research entry.
 All research diagrams use the same displayed width, controlled by
@@ -133,3 +132,6 @@ sources have matching names in diagrams/research/. Earlier versions are retained
 
 Latest canvas sizes: TRACE and primal-dual 1760 × 625; add-on 1670 × 625;
 bandits 1730 × 625. Primal-dual-wide now contains the selected balanced layout.
+
+Unpublished writing in `_drafts/` is local-only and ignored by Git. Move an article
+to `_posts/` when it is ready to be tracked and published.

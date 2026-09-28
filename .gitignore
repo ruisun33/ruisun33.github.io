@@ -28,3 +28,6 @@ assets/js/dist
 
 # macOS folder metadata
 .DS_Store
+
+# Unpublished writing stays local
+/_drafts/
