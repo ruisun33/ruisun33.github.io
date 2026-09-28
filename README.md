@@ -18,6 +18,11 @@ that theme. The theme itself is installed through the Gemfile; do not edit vendo
 | _config.yml | Site metadata, avatar, social profiles, theme and build settings |
 | assets/css/jekyll-theme-chirpy.scss | Custom styles, following the theme import |
 
+Browser titles use `title` followed by ` | Rui Sun`; the homepage uses `Rui Sun`.
+For a long post title, add `browser_title: "Shorter title"` to its front matter.
+This changes the browser tab title while preserving the full visible heading.
+The title logic lives in `_includes/head.html`, which overrides the theme’s head.
+
 ## How a page is assembled
 
 index.md -> _layouts/home.html -> the theme’s default layout.

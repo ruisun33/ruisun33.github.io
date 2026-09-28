@@ -1,126 +1,159 @@
 <mxfile host="65bd71144e">
-  <diagram id="add-on-wide" name="add-on-wide">
-    <mxGraphModel dx="1831" dy="1513" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1670" pageHeight="625" background="#FFFFFF" math="0" shadow="0">
+  <diagram id="add-on-wide" name="Add-on discounts — wide">
+    <mxGraphModel dx="1163" dy="981" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1670" pageHeight="625" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" style="rounded=0;absoluteArcSize=1;arcSize=0;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=none;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="625" width="1670" as="geometry" />
+        <mxCell id="2" value="" style="rounded=0;absoluteArcSize=1;arcSize=0;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=none;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry width="1670" height="625" as="geometry" />
         </mxCell>
-        <mxCell id="3" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" value="LEARNING DEMAND / OPTIMIZING OFFERS" vertex="1">
-          <mxGeometry height="26" width="1582.0" x="48" y="28" as="geometry" />
+        <mxCell id="3" value="LEARNING DEMAND / OPTIMIZING OFFERS" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=17;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="48" y="28" width="1582" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="4" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=36;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="Learning to price with add-on discounts" vertex="1">
-          <mxGeometry height="48" width="1582.0" x="48" y="72" as="geometry" />
+        <mxCell id="4" value="Learning to price with add-on discounts" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=36;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="48" y="72" width="1582" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="5" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#53667B;fontStyle=0;strokeColor=none;fillColor=none;" value="A core purchase unlocks discounts on selected complementary products." vertex="1">
-          <mxGeometry height="32" width="1582.0" x="48" y="131" as="geometry" />
+        <mxCell id="5" value="A core purchase unlocks discounts on selected complementary products." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#53667B;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="48" y="130.5" width="1582" height="33" as="geometry" />
         </mxCell>
-        <mxCell id="6" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F7F9FC;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="186" width="660" x="48" y="246" as="geometry" />
+        <mxCell id="101" value="A purchase unlocks offers" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=26;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="48" y="196" width="640" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="7" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=26;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="A purchase unlocks offers" vertex="1">
-          <mxGeometry height="34" width="660" x="48" y="200" as="geometry" />
+        <mxCell id="102" value="UCB + OPT: learn and optimize together" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=26;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="736" y="196" width="886" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="8" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=0;fillColor=#F2F6FD;strokeColor=#C6D5F0;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="146" width="140" x="68.0" y="268.0" as="geometry" />
+        <mxCell id="103" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F7F9FC;strokeColor=#D9E2EC;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="48" y="246" width="640" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="9" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=24;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" value="Core item" vertex="1">
-          <mxGeometry height="146" width="140" x="68.0" y="268.0" as="geometry" />
+        <mxCell id="104" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EAF1FC;strokeColor=#B7CBEC;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="72" y="275" width="116" height="144" as="geometry" />
         </mxCell>
-        <mxCell id="10" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#3563C5;strokeWidth=2.5;dashed=0;">
+        <mxCell id="105" value="Core&#10;item" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="72" y="294" width="116" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="106" value="Purchase" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=20;fontColor=#3563C5;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="72" y="369" width="116" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="107" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#3563C5;strokeWidth=2.5;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="222.0" y="341.0" as="sourcePoint" />
-            <mxPoint x="270.0" y="341.0" as="targetPoint" />
+            <mxPoint x="202" y="347" as="sourcePoint" />
+            <mxPoint x="249" y="347" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="11" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=18;fontColor=#53667B;fontStyle=0;strokeColor=none;fillColor=none;" value="unlocks" vertex="1">
-          <mxGeometry height="26" width="70" x="211.0" y="297.0" as="geometry" />
+        <mxCell id="108" value="unlocks" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#53667B;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="198" y="300" width="56" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="12" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="146" width="128" x="286.0" y="268.0" as="geometry" />
+        <mxCell id="109" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EDF6F3;strokeColor=#C0DBD2;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="268" y="275" width="124" height="144" as="geometry" />
         </mxCell>
-        <mxCell id="13" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="Add-on A" vertex="1">
-          <mxGeometry height="33" width="128" x="286.0" y="297" as="geometry" />
+        <mxCell id="110" value="Add-on&#10;item A" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="268" y="294" width="124" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="14" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=20;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" value="Discount" vertex="1">
-          <mxGeometry height="30" width="128" x="286.0" y="361" as="geometry" />
+        <mxCell id="111" value="" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#DFF0EB;strokeColor=none;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="276" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="15" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="146" width="128" x="424.0" y="268.0" as="geometry" />
+        <mxCell id="112" value="Discount" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=19;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="276" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="16" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="Add-on B" vertex="1">
-          <mxGeometry height="33" width="128" x="424.0" y="297" as="geometry" />
+        <mxCell id="113" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EDF6F3;strokeColor=#C0DBD2;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="404" y="275" width="124" height="144" as="geometry" />
         </mxCell>
-        <mxCell id="17" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=20;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" value="Discount" vertex="1">
-          <mxGeometry height="30" width="128" x="424.0" y="361" as="geometry" />
+        <mxCell id="114" value="Add-on&#10;item B" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="404" y="294" width="124" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="18" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="146" width="128" x="562.0" y="268.0" as="geometry" />
+        <mxCell id="115" value="" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#DFF0EB;strokeColor=none;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="412" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="19" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="Add-on C" vertex="1">
-          <mxGeometry height="33" width="128" x="562.0" y="297" as="geometry" />
+        <mxCell id="116" value="Discount" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=19;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="412" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="20" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=20;fontColor=#53667B;fontStyle=1;strokeColor=none;fillColor=none;" value="Regular" vertex="1">
-          <mxGeometry height="30" width="128" x="562.0" y="361" as="geometry" />
+        <mxCell id="117" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EDF6F3;strokeColor=#C0DBD2;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="540" y="275" width="124" height="144" as="geometry" />
         </mxCell>
-        <mxCell id="23" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=26;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" value="UCB + OPT - learn and optimize together" vertex="1">
-          <mxGeometry height="34" width="830.0" x="800" y="200" as="geometry" />
+        <mxCell id="118" value="Add-on&#10;item C" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="540" y="294" width="124" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="24" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F2F6FD;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="98" width="830" x="800" y="246" as="geometry" />
+        <mxCell id="119" value="" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#EEF1F5;strokeColor=none;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="548" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="25" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" value="1  Learn demand with upper confidence bounds" vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="258" as="geometry" />
+        <mxCell id="120" value="Regular" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=19;fontColor=#53667B;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="548" y="373" width="108" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="26" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" value="Estimate demand while accounting for uncertainty." vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="298" as="geometry" />
+        <mxCell id="1001" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F7F3FD;strokeColor=#D7C7F0;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="72" y="438" width="210" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="27" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F7F3FD;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="89.19" width="830.01" x="800" y="366" as="geometry" />
+        <mxCell id="122" value="Demand&#10;unknown" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#7545C3;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="82" y="447" width="190" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="28" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#7545C3;fontStyle=1;strokeColor=none;fillColor=none;" value="2  Optimize offers with an FPTAS" vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="378" as="geometry" />
+        <mxCell id="123" value="How do prices change purchases?" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="300" y="442" width="364" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="29" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" value="Jointly choose prices and which add-ons to discount." vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="418" as="geometry" />
+        <mxCell id="124" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F2F6FD;strokeColor=#C6D5F0;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="736" y="246" width="268" height="264" as="geometry" />
         </mxCell>
-        <mxCell id="30" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EFF8F6;strokeColor=#D9E2EC;strokeWidth=1.5;dashed=0;" value="" vertex="1">
-          <mxGeometry height="89.19" width="830" x="800" y="486" as="geometry" />
+        <mxCell id="125" value="1  Learn demand" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="752" y="264" width="236" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="31" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=25;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" value="3  Deploy offers and observe purchases" vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="498" as="geometry" />
+        <mxCell id="126" value="Upper confidence&#10;bounds" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#3563C5;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="758" y="313" width="224" height="60.72" as="geometry" />
         </mxCell>
-        <mxCell id="32" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" value="Update demand estimates from core and add-on choices." vertex="1">
-          <mxGeometry height="30" width="806.0" x="824" y="538" as="geometry" />
+        <mxCell id="127" value="Estimate demand&#10;while accounting&#10;for uncertainty." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="758" y="392" width="224" height="87.12" as="geometry" />
         </mxCell>
-        <mxCell id="33" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#3563C5;strokeWidth=2.5;dashed=0;">
+        <mxCell id="128" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#3563C5;strokeWidth=2.5;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1256" y="347" as="sourcePoint" />
-            <mxPoint x="1256" y="362" as="targetPoint" />
+            <mxPoint x="1011" y="378" as="sourcePoint" />
+            <mxPoint x="1033.67" y="378" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="34" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#7545C3;strokeWidth=2.5;dashed=0;">
+        <mxCell id="129" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#F7F3FD;strokeColor=#D7C7F0;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="1040.67" y="246" width="268" height="264" as="geometry" />
+        </mxCell>
+        <mxCell id="130" value="2  Optimize offers" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#7545C3;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1056.67" y="264" width="236" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="131" value="FPTAS" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#7545C3;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1062.67" y="328.18" width="224" height="30.36" as="geometry" />
+        </mxCell>
+        <mxCell id="132" value="Jointly choose prices&#10;and which add-ons&#10;to discount." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1062.67" y="392" width="224" height="87.12" as="geometry" />
+        </mxCell>
+        <mxCell id="133" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#7545C3;strokeWidth=2.5;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1256" y="467" as="sourcePoint" />
-            <mxPoint x="1256" y="482" as="targetPoint" />
+            <mxPoint x="1315.67" y="378" as="sourcePoint" />
+            <mxPoint x="1338.33" y="378" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="35" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#137E77;strokeWidth=2.5;dashed=0;">
+        <mxCell id="134" value="" style="rounded=1;absoluteArcSize=1;arcSize=24;whiteSpace=wrap;html=0;fillColor=#EFF8F6;strokeColor=#C2DFD8;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="1345.33" y="246" width="268" height="264" as="geometry" />
+        </mxCell>
+        <mxCell id="135" value="3  Observe purchases" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1361.33" y="264" width="236" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="136" value="Deploy prices" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=23;fontColor=#137E77;fontStyle=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1367.33" y="328.18" width="224" height="30.36" as="geometry" />
+        </mxCell>
+        <mxCell id="137" value="Learn from core&#10;purchases and&#10;add-on choices." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1367.33" y="392" width="224" height="87.12" as="geometry" />
+        </mxCell>
+        <mxCell id="138" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#137E77;strokeWidth=2.5;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1479.33" y="530" as="sourcePoint" />
+            <mxPoint x="870" y="530" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="766" y="535" />
-              <mxPoint x="766" y="295" />
+              <mxPoint x="1479.33" y="560" />
+              <mxPoint x="870" y="560" />
             </Array>
-            <mxPoint x="792" y="535" as="sourcePoint" />
-            <mxPoint x="792" y="295" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xxk4QLar74w0wazzSOvi-35" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=26;fontColor=#7545C3;fontStyle=1;strokeColor=none;fillColor=none;" value="Demand is unknown" vertex="1">
-          <mxGeometry height="34" width="632" x="60" y="458.0" as="geometry" />
+        <mxCell id="139" value="" style="rounded=1;absoluteArcSize=1;arcSize=0;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=none;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="946.66" y="542" width="456" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="xxk4QLar74w0wazzSOvi-36" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" value="How do prices change purchases?&#10;Which add-on offers work best?" vertex="1">
-          <mxGeometry height="64" width="632" x="60" y="507.0" as="geometry" />
+        <mxCell id="140" value="Update estimates from observations" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=24;fontColor=#137E77;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="946.66" y="542" width="456" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="1002" value="Which add-on offers work best?" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=22;fontColor=#182B43;fontStyle=0;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="300" y="486" width="364" height="32" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

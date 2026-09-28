@@ -41,6 +41,10 @@ $gutter: 1.5rem;
 /* --- Palette refinements -------------------------------------------------- */
 
 @mixin palette-light {
+  --topic-blue-bg: #edf3fc;
+  --topic-blue-fg: #355c96;
+  --topic-teal-bg: #eaf5f1;
+  --topic-teal-fg: #27685d;
   --rule-color: rgb(0 0 0 / 9%);
   --link-color: #1e5a8a;
   --link-underline-color: #d3dde5;
@@ -58,6 +62,10 @@ $gutter: 1.5rem;
 }
 
 @mixin palette-dark {
+  --topic-blue-bg: #233248;
+  --topic-blue-fg: #b2cef4;
+  --topic-teal-bg: #203a35;
+  --topic-teal-fg: #a2d7c9;
   --rule-color: rgb(255 255 255 / 13%);
   --link-color: #7fb6e0;
   --link-underline-color: #3a4a57;
@@ -732,6 +740,12 @@ h1.dynamic-title,
 }
 
 .research-row {
+  --topic-bg: var(--topic-teal-bg);
+  --topic-fg: var(--topic-teal-fg);
+  &.research-row-ai {
+    --topic-bg: var(--topic-blue-bg);
+    --topic-fg: var(--topic-blue-fg);
+  }
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
   gap: 1.5rem;
@@ -752,11 +766,13 @@ h1.dynamic-title,
     margin: 0 0 1rem;
     li {
       margin: 0;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid var(--main-border-color);
-      border-radius: 5px;
-      color: var(--text-muted-color);
+      padding: 0.22rem 0.65rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--topic-bg);
+      color: var(--topic-fg);
       font-size: 0.8rem;
+      font-weight: 500;
     }
   }
 }
@@ -788,12 +804,13 @@ h1.dynamic-title,
     border-bottom: 0;
   }
 
-  .research-meta {
-    display: inline-flex;
-    vertical-align: middle;
-    margin: 0 0 0 0.65rem;
-    justify-content: flex-start;
-  }
+}
+
+.research-details-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
 }
 
 /* Research titles use their Paper links instead of visible heading permalinks. */
@@ -825,21 +842,35 @@ h1.dynamic-title,
 .research-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.4rem;
+  justify-content: flex-start;
+  gap: 0.65rem;
 
   .resource-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     position: relative;
-    padding: 0.15rem 0.5rem;
-    border: 1px solid var(--main-border-color);
-    border-radius: 5px;
+    padding: 0.22rem 0.6rem;
+    border: 0;
+    border-radius: 6px;
+    color: var(--link-color);
     font-size: 0.8rem;
-    line-height: inherit;
+    font-weight: 600;
+    line-height: 1.5;
     text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+
+  a.resource-tag:hover {
+    background: var(--topic-bg);
+    color: var(--link-color);
+    border: 0;
   }
 
   .resource-pending {
+    border: 0;
+    background: transparent;
+    font-weight: 400;
     color: var(--text-muted-color);
     cursor: default;
   }
@@ -868,4 +899,10 @@ h1.dynamic-title,
   .resource-pending:focus .resource-tooltip {
     visibility: visible;
   }
+}
+
+/* Resource links use icon and color rather than the theme's link underline. */
+.content .research-meta a.resource-tag {
+  border: 0;
+  box-shadow: none;
 }

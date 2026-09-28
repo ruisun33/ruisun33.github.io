@@ -4,6 +4,6 @@
   {% assign visual_url = visual_url | append: '?v=' | append: visual_version %}
 {% endif %}
 <figure class="research-visual">
-  <a href="{{ visual_url }}" target="_blank" rel="noopener" aria-label="Enlarge image: {{ include.alt | escape }}"><img src="{{ visual_url }}" alt="{{ include.alt | escape }}" width="{{ include.width | default: 960 }}" height="{{ include.height | default: 320 }}"></a>
+  <img src="{{ visual_url }}" alt="{{ include.alt | escape }}" width="{{ include.width | default: 960 }}" height="{{ include.height | default: 320 }}">
   {% if include.caption %}<figcaption>{{ include.caption | escape }}{% if include.source %} <a href="{{ include.source }}">Source</a>{% endif %}</figcaption>{% endif %}
 </figure>
